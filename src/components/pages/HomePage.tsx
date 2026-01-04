@@ -166,7 +166,7 @@ const HomePage: React.FC = () => {
               </AnimatedElement>
 
               <AnimatedElement delay={100}>
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] font-montserrat">
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] font-fraunces">
                   SHRUTIKA <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary font-fraunces">
                     SATANGE
