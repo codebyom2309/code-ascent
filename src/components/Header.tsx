@@ -29,7 +29,7 @@ export default function Header() {
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-heading font-bold text-primary-foreground text-xl transition-transform duration-300 group-hover:scale-110">
                 SS
               </div>
-              <div className="absolute inset-0 bg-primary rounded-lg blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-lg blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300 bg-deep-navy" />
             </div>
             <span className="font-heading text-xl font-bold text-foreground hidden sm:block">
               Shrutika Satange

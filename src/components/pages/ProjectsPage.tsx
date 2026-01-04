@@ -32,7 +32,6 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      
       <main className="pt-32 pb-24 px-8">
         <div className="max-w-[100rem] mx-auto">
           {/* Page Header */}
@@ -42,7 +41,7 @@ export default function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-6xl md:text-7xl font-bold text-foreground mb-6">
+            <h1 className="text-6xl font-bold text-foreground mb-6 md:text-6xl font-trirong">
               Projects
             </h1>
             <div className="w-24 h-1 bg-primary" />
@@ -157,7 +156,6 @@ export default function ProjectsPage() {
           )}
         </div>
       </main>
-
       <Footer />
     </div>
   );
