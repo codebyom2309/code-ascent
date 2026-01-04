@@ -67,7 +67,7 @@ export default function CertificationsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 font-trirong">
+            <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 font-fraunces">
               Certifications
             </h1>
             <div className="w-24 h-1 bg-primary" />

@@ -166,7 +166,7 @@ const HomePage: React.FC = () => {
               </AnimatedElement>
 
               <AnimatedElement delay={100}>
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] font-montserrat">
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] font-fraunces">
                   SHRUTIKA <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary font-fraunces">
                     SATANGE
@@ -446,9 +446,20 @@ const HomePage: React.FC = () => {
                 <p className="text-foreground/60 mb-8">
                   A track record of delivering value and technical excellence across diverse organizations.
                 </p>
-                <Button className="bg-white text-black hover:bg-gray-200 rounded-none">
-                  <Download className="mr-2 w-4 h-4" /> Download Full Resume
-                </Button>
+                <Button
+  asChild
+  className="bg-white text-black hover:bg-gray-200 rounded-none"
+>
+  <a
+    href="https://drive.google.com/file/d/1cPnrtaOmIXA5WVE7W0iN_dTcQVU0rOCE/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Download className="mr-2 w-4 h-4" />
+    Download Full Resume
+  </a>
+</Button>
+
               </div>
             </div>
 
