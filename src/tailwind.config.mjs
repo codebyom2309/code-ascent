@@ -23,7 +23,8 @@ export default {
                 paragraph: ["work-sans-v2"],
                 "eb-garamond": ["eb garamond", "serif"],
                 kanit: ["kanit", "sans-serif"],
-                trirong: ["trirong", "serif"]
+                trirong: ["trirong", "serif"],
+                montserrat: ["montserrat", "sans-serif"]
             },
             colors: {
                 charcoal: "#000000",

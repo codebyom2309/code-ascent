@@ -35,7 +35,6 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      
       <main className="pt-32 pb-24 px-8">
         <div className="max-w-[100rem] mx-auto">
           {/* Page Header */}
@@ -45,7 +44,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-6xl md:text-7xl font-bold text-foreground mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 font-montserrat">
               About Me
             </h1>
             <div className="w-24 h-1 bg-primary" />
@@ -59,7 +58,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             <div className="bg-charcoal rounded-xl p-12 border border-primary/20">
-              <h2 className="font-heading text-3xl font-bold text-primary mb-8">
+              <h2 className="font-heading text-3xl font-bold mb-8 text-primary">
                 Professional Background
               </h2>
               <div className="space-y-6 font-paragraph text-lg text-foreground/80 leading-relaxed">
@@ -136,9 +135,7 @@ export default function AboutPage() {
                                 <span className="font-paragraph text-sm text-foreground/60">
                                   Proficiency
                                 </span>
-                                <span className="font-paragraph text-sm font-semibold text-primary">
-                                  {item.proficiencyLevel}%
-                                </span>
+
                               </div>
                               <div className="h-2 bg-deep-navy rounded-full overflow-hidden">
                                 <motion.div
@@ -170,7 +167,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
