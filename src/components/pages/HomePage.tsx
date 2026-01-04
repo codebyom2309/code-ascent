@@ -166,7 +166,7 @@ const HomePage: React.FC = () => {
               </AnimatedElement>
 
               <AnimatedElement delay={100}>
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] font-fraunces">
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] font-montserrat">
                   SHRUTIKA <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary font-fraunces">
                     SATANGE
@@ -201,19 +201,13 @@ const HomePage: React.FC = () => {
                       View Projects <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
-                  <a 
-                    href="/resume.pdf" 
-                    download="Shrutika_Satange_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Button 
+                    variant="outline" 
+                    className="h-14 px-8 border-foreground/20 hover:bg-foreground/5 rounded-none text-lg font-medium"
+                    onClick={() => window.open('#', '_blank')}
                   >
-                    <Button 
-                      variant="outline" 
-                      className="h-14 px-8 border-foreground/20 hover:bg-foreground/5 rounded-none text-lg font-medium"
-                    >
-                      Download Resume <Download className="ml-2 w-5 h-5" />
-                    </Button>
-                  </a>
+                    Download Resume <Download className="ml-2 w-5 h-5" />
+                  </Button>
                 </div>
               </AnimatedElement>
             </div>
