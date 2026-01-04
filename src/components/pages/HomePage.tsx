@@ -142,9 +142,7 @@ export default function HomePage() {
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 origin-left"
         style={{ scaleX }}
       />
-
       <Header />
-
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden">
         <GridBackground />
@@ -169,9 +167,9 @@ export default function HomePage() {
               </AnimatedElement>
 
               <AnimatedElement delay={100}>
-                <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9]">
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] font-montserrat">
                   SHRUTIKA <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary font-fraunces">
                     SATANGE
                   </span>
                 </h1>
@@ -255,9 +253,7 @@ export default function HomePage() {
           <div className="w-px h-12 bg-gradient-to-b from-foreground/30 to-transparent" />
         </motion.div>
       </section>
-
       <SectionDivider />
-
       {/* --- ABOUT SECTION (Sticky Layout) --- */}
       <section className="py-32 relative">
         <div className="container max-w-[120rem] mx-auto px-6">
@@ -315,9 +311,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       <SectionDivider />
-
       {/* --- SKILLS SECTION (Tech Grid) --- */}
       <section className="py-32 bg-charcoal/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
@@ -368,7 +362,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- PROJECTS SECTION (Horizontal Scroll / Cards) --- */}
       <section className="py-32 relative">
         <div className="container max-w-[120rem] mx-auto px-6">
@@ -440,9 +433,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       <SectionDivider />
-
       {/* --- EXPERIENCE SECTION (Timeline) --- */}
       <section className="py-32 bg-deep-navy/30">
         <div className="container max-w-[120rem] mx-auto px-6">
@@ -496,7 +487,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- CERTIFICATIONS SECTION --- */}
       <section className="py-24 border-y border-white/5">
         <div className="container max-w-[120rem] mx-auto px-6">
@@ -526,7 +516,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- CONTACT SECTION --- */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-deep-navy/20" />
@@ -596,7 +585,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

@@ -24,7 +24,9 @@ export default {
                 "eb-garamond": ["eb garamond", "serif"],
                 kanit: ["kanit", "sans-serif"],
                 trirong: ["trirong", "serif"],
-                montserrat: ["montserrat", "sans-serif"]
+                montserrat: ["montserrat", "sans-serif"],
+                "noticia-text": ["noticia text", "serif"],
+                fraunces: ["fraunces", "serif"]
             },
             colors: {
                 charcoal: "#000000",
