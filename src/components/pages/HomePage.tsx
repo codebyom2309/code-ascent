@@ -201,13 +201,19 @@ const HomePage: React.FC = () => {
                       View Projects <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
-                  <Button 
-                    variant="outline" 
-                    className="h-14 px-8 border-foreground/20 hover:bg-foreground/5 rounded-none text-lg font-medium"
-                    onClick={() => window.open('#', '_blank')}
+                  <a 
+                    href="/resume.pdf" 
+                    download="Shrutika_Satange_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Download Resume <Download className="ml-2 w-5 h-5" />
-                  </Button>
+                    <Button 
+                      variant="outline" 
+                      className="h-14 px-8 border-foreground/20 hover:bg-foreground/5 rounded-none text-lg font-medium"
+                    >
+                      Download Resume <Download className="ml-2 w-5 h-5" />
+                    </Button>
+                  </a>
                 </div>
               </AnimatedElement>
             </div>

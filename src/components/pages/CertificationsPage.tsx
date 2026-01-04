@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, ExternalLink, Calendar } from 'lucide-react';
+import { Award, ExternalLink, Calendar, Maximize2 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
@@ -8,10 +8,13 @@ import { Certifications } from '@/entities';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Image } from '@/components/ui/image';
 import { format } from 'date-fns';
+import CertificationModal from '@/components/CertificationModal';
 
 export default function CertificationsPage() {
   const [certifications, setCertifications] = useState<Certifications[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedCert, setSelectedCert] = useState<Certifications | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     loadCertifications();
@@ -40,6 +43,16 @@ export default function CertificationsPage() {
     } catch {
       return '';
     }
+  };
+
+  const handleOpenModal = (cert: Certifications) => {
+    setSelectedCert(cert);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedCert(null);
   };
 
   return (
@@ -74,15 +87,16 @@ export default function CertificationsPage() {
               {certifications.map((cert, index) => (
                 <motion.div
                   key={cert._id}
-                  className="bg-charcoal rounded-xl overflow-hidden border border-primary/20 hover:border-primary/50 transition-all duration-300 group"
+                  className="bg-charcoal rounded-xl overflow-hidden border border-primary/20 hover:border-primary/50 transition-all duration-300 group cursor-pointer h-full flex flex-col"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   whileHover={{ y: -8, scale: 1.02 }}
+                  onClick={() => handleOpenModal(cert)}
                 >
                   {/* Badge Image */}
                   {cert.badgeImage && (
-                    <div className="relative h-64 bg-deep-navy flex items-center justify-center p-8">
+                    <div className="relative h-64 bg-deep-navy flex items-center justify-center p-8 overflow-hidden">
                       <Image 
                         src={cert.badgeImage} 
                         alt={cert.certificationName || 'Certification'} 
@@ -90,11 +104,15 @@ export default function CertificationsPage() {
                         width={400}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
+                      {/* Expand Icon */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-colors duration-300">
+                        <Maximize2 className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
                     </div>
                   )}
 
                   {/* Content */}
-                  <div className="p-8">
+                  <div className="p-8 flex-1 flex flex-col">
                     <div className="flex items-start gap-3 mb-4">
                       <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <Award className="h-5 w-5 text-primary" />
@@ -119,17 +137,20 @@ export default function CertificationsPage() {
                       </div>
                     )}
 
-                    {cert.verificationUrl && (
-                      <a
-                        href={cert.verificationUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-paragraph text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-primary/20"
-                      >
-                        Verify Credential
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    )}
+                    <div className="mt-auto pt-4 border-t border-white/10">
+                      {cert.verificationUrl && (
+                        <a
+                          href={cert.verificationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-paragraph text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 border border-primary/20"
+                        >
+                          Verify Credential
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -154,6 +175,12 @@ export default function CertificationsPage() {
           )}
         </div>
       </main>
+
+      <CertificationModal 
+        certification={selectedCert} 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal}
+      />
 
       <Footer />
     </div>

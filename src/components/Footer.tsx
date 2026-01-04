@@ -31,6 +31,18 @@ const Footer: React.FC = () => {
     return Mail;
   };
 
+  const handleSocialClick = (url: string | undefined, platformName: string | undefined) => {
+    if (!url) return;
+    
+    // Handle email links
+    if (platformName?.toLowerCase().includes('email') || url.startsWith('mailto:')) {
+      window.location.href = url;
+    } else {
+      // Open external links in new tab
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <footer className="bg-charcoal border-t border-primary/10">
       <div className="max-w-[120rem] mx-auto px-8 py-16">
@@ -73,15 +85,14 @@ const Footer: React.FC = () => {
             {socialLinks.map((social) => {
               const IconComponent = getIconComponent(social.platformName || '');
               return (
-                <motion.a
+                <motion.button
                   key={social._id}
-                  href={social.platformUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => handleSocialClick(social.platformUrl, social.platformName)}
                   className="w-10 h-10 bg-deep-navy rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                   whileHover={{ y: -4, scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   title={social.description || social.platformName}
+                  type="button"
                 >
                   {social.platformIcon ? (
                     <Image 
@@ -93,7 +104,7 @@ const Footer: React.FC = () => {
                   ) : (
                     <IconComponent className="h-5 w-5" />
                   )}
-                </motion.a>
+                </motion.button>
               );
             })}
           </div>
