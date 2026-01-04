@@ -1,4 +1,3 @@
-// HPI 1.6-G
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -82,7 +81,7 @@ const GridBackground = () => (
 
 // --- Main Component ---
 
-export default function HomePage() {
+const HomePage: React.FC = () => {
   // --- Data State ---
   const [stats, setStats] = useState<HeroSectionStatistics[]>([]);
   const [projects, setProjects] = useState<Projects[]>([]);
@@ -588,4 +587,6 @@ export default function HomePage() {
       <Footer />
     </div>
   );
-}
+};
+
+export default HomePage;

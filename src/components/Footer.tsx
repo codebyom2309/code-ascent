@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
@@ -6,7 +6,7 @@ import { BaseCrudService } from '@/integrations';
 import { SocialLinks } from '@/entities';
 import { Image } from '@/components/ui/image';
 
-export default function Footer() {
+const Footer: React.FC = () => {
   const [socialLinks, setSocialLinks] = useState<SocialLinks[]>([]);
 
   useEffect(() => {
@@ -108,4 +108,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
